@@ -1,0 +1,44 @@
+@import './base.css';
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Global styles */
+
+/* Add glass morphism effect */
+.dark .bg-opacity-95 {
+  backdrop-filter: blur(12px);
+}
+
+.bg-opacity-95 {
+  backdrop-filter: blur(8px);
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+main {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.active\:scale-98:active {
+  transform: scale(0.98);
+}
+
+/* Remove default outline on focus */
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+}
+
+/* Add padding to inputs in cards */
+.grid input, .grid select {
+  padding: 0.625rem 0.75rem;
+}
+
+/* Fix textarea padding */
+#input-text {
+  padding: 1rem;
+}
